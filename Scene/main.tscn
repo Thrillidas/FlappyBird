@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01utalsh6qrb"]
+
+[ext_resource type="PackedScene" uid="uid://mtna0qkvtq5i" path="res://Scene/player.tscn" id="1_3gl38"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_voyl5"]
+distance = -607.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Enviroment" type="Node2D" parent="."]
+
+[node name="Enviroment" type="ColorRect" parent="Enviroment"]
+offset_right = 1148.0
+offset_bottom = 648.0
+size_flags_horizontal = 6
+color = Color(0, 0, 0, 1)
+
+[node name="Floor" type="StaticBody2D" parent="Enviroment"]
+
+[node name="flor_collision" type="CollisionShape2D" parent="Enviroment/Floor"]
+position = Vector2(96, 40)
+shape = SubResource("WorldBoundaryShape2D_voyl5")
+
+[node name="Player" parent="." instance=ExtResource("1_3gl38")]
+position = Vector2(108, 298)
