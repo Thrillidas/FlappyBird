@@ -28,9 +28,7 @@ func spawn_double_pipes(pipe_location):
 	spawn_pipes(pipe_width, random_height_size, pipe_location, 0)
 	spawn_pipes(pipe_width, bottom_size, pipe_location, bottom_height_position)
 	
-##########################
-##This code doesnt work###
-##########################
+
 
 #extends Node2D
 #var pipe_node = preload("res://Scene/pipelines.tscn")
