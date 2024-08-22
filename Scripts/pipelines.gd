@@ -12,13 +12,12 @@ func create_pipe(x_size, y_size,x_position,y_position):
 	$PipelineSprite.position.x = x_position
 	$PipelineSprite.position.y = y_position
 
-
 func resize_pipe(x_size, y_size):
 	$PipelineSprite.size.x = x_size
 	$PipelineSprite.size.y = y_size
 
 func movement():
-	velocity.x = -100
+	velocity.x = 0
 	move_and_slide()
 	
 	
