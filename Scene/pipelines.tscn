@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/pipelines.gd" id="1_o2gwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpwkx"]
+resource_local_to_scene = true
 
 [node name="Pipelines" type="CharacterBody2D"]
 script = ExtResource("1_o2gwj")
