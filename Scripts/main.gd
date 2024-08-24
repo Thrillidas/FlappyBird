@@ -4,6 +4,15 @@ var screen_max_height = DisplayServer.window_get_size()
 
 func _ready():
 	spawn_double_pipes(500)		
+	#spawn_pipes(100,300,500,0)
+	#spawn_pipes(100,250,500,668)
+
+func _physics_process(delta):
+	#pipe_node.movement(delta)
+	pass
+
+	
+	
 #Create a pipeline, allowing to specify the size and location.
 func spawn_pipes(x_size, y_size, x_position, y_position):
 	var pipe = pipe_node.instantiate()
@@ -26,16 +35,19 @@ func spawn_double_pipes(pipe_location):
 	##Testing code##
 	################
 	
-	# How to create collision shape in code https://www.reddit.com/r/godot/comments/p7tc8y/how_to_spawn_a_area_2d_with_code/
 
-	var area2d = Area2D.new()
-	var area2dCollision =  CollisionShape2D.new()
-	var area2dshape = RectangleShape2D.new()
-	area2dshape.size =Vector2(pipe_width,gap)
-	area2dCollision.shape = area2dshape
-	add_child(area2d)
-	area2d.add_child(area2dCollision)
-	area2d.position = Vector2(pipe_location, random_height_size + gap)
+	##How to create collision shape in code https://www.reddit.com/r/godot/comments/p7tc8y/how_to_spawn_a_area_2d_with_code/
+#
+	#var area2d = Area2D.new()
+	#var area2dCollision =  CollisionShape2D.new()
+	#var area2dshape = RectangleShape2D.new()
+	#area2dshape.size =Vector2(pipe_width,gap)
+	#area2dCollision.shape = area2dshape
+	#add_child(area2d)
+	#area2d.add_child(area2dCollision)
+	#area2d.position = Vector2(pipe_location+(pipe_width/2), bottom_height_position-pipe_width)
+	
+
 
 	
 	
