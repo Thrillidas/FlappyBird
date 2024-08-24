@@ -8,6 +8,8 @@ func _physics_process(delta):
 func create_pipe(x_size, y_size):
 	$PipelineSprite.size = Vector2(x_size,y_size)
 	$CollisionPipe.shape.size = Vector2(x_size,y_size)
+	$CollisionPipe.position = Vector2(x_size/2,y_size/2)
+
 	
 func movement(delta):
 	velocity.x = -100
