@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpwkx"]
 resource_local_to_scene = true
 
-[node name="Pipelines" type="CharacterBody2D"]
+[node name="Pipelines" type="Area2D"]
 script = ExtResource("1_o2gwj")
 
 [node name="PipelineSprite" type="ColorRect" parent="."]
@@ -14,3 +14,5 @@ offset_bottom = 40.0
 
 [node name="CollisionPipe" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hpwkx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

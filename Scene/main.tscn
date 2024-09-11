@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b01utalsh6qrb"]
+[gd_scene load_steps=6 format=3 uid="uid://b01utalsh6qrb"]
 
 [ext_resource type="PackedScene" uid="uid://mtna0qkvtq5i" path="res://Scene/player.tscn" id="1_3gl38"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_srjs3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_voyl5"]
 distance = -735.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hp8a0"]
+normal = Vector2(0, 1)
+distance = -1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2nlg"]
+distance = -594.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_srjs3")
@@ -19,9 +26,22 @@ color = Color(0, 0, 0, 1)
 
 [node name="Floor" type="StaticBody2D" parent="Enviroment"]
 
-[node name="floor_collision" type="CollisionShape2D" parent="Enviroment/Floor"]
+[node name="Floor_collision" type="CollisionShape2D" parent="Enviroment/Floor"]
 position = Vector2(93, 37)
 shape = SubResource("WorldBoundaryShape2D_voyl5")
+
+[node name="Ceilling" type="StaticBody2D" parent="Enviroment"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/Ceilling"]
+position = Vector2(89, 0)
+shape = SubResource("WorldBoundaryShape2D_hp8a0")
+
+[node name="LeftWall" type="Area2D" parent="Enviroment"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enviroment/LeftWall"]
+position = Vector2(-335, 92)
+rotation = -1.57079
+shape = SubResource("WorldBoundaryShape2D_j2nlg")
 
 [node name="Player" parent="." instance=ExtResource("1_3gl38")]
 position = Vector2(108, 298)
